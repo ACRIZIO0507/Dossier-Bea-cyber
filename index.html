@@ -296,6 +296,33 @@
 <a class="ct" href="https://www.linkedin.com/in/bea-acrizio07" target="_blank" rel="noopener noreferrer">
   linkedin.com/in/bea-acrizio07
 </a>
+       <form id="contactForm" class="contact-fade">
+      <div class="field">
+        <label dta-i18="contact.name">nome</label>
+        <input type="text" name="name" placeholder="Seu nome"
+        required data-i18n-placeholder="contact.namePh">
+      </div>
+      <div class="field">
+         <label dta-i18="contact.email">email</label>
+        <input type="email" name="email" placeholder="seu@email.com"
+        required>
+      </div>
+      <div class="field">
+         <label dta-i18="contact.subject">assunto</label>
+        <input type="text" name="subject" placeholder="Assunto"
+        required data-i18n-placeholder="contact.subjectPh">
+      </div>
+      <div class="field">
+         <label dta-i18="contact.message">mensagem</label>
+        <textarea name="message" placeholder="Sua mensagem..."
+        required data-i18n-placeholder="contact.messagePh">
+        </textarea>
+      </div>
+      <button type="submit" class="btn fill" style="width: fit-content; cursor:pointer" data--i18="contact.send">
+        ENVIAR MENSAGEM
+      </button>
+       </form>
+       </div>
   </section>
 
   <footer>

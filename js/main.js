@@ -29,3 +29,65 @@ btn.addEventListener("click", function () {
 });
 
 setIcon(); // ajusta o ícone assim que a página abre
+
+// =========================================================
+// FORMULÁRIO DE CONTATO
+// =========================================================
+
+const contactForm = document.getElementById("contactForm");
+const formStatus = document.getElementById("formStatus");
+
+if (contactForm) {
+
+  contactForm.addEventListener("submit", function (event) {
+
+    event.preventDefault();
+
+    const submitButton = contactForm.querySelector(".contact-submit");
+
+    const name = contactForm.elements["name"].value.trim();
+    const email = contactForm.elements["email"].value.trim();
+    const subject = contactForm.elements["subject"].value.trim();
+    const message = contactForm.elements["message"].value.trim();
+
+    // Validação básica
+    if (!name || !email || !subject || !message) {
+
+      formStatus.textContent = "Preencha todos os campos.";
+      formStatus.className = "form-status error";
+
+      return;
+    }
+
+    // Estado de envio
+    submitButton.classList.add("loading");
+    submitButton.textContent = "ENVIANDO...";
+    formStatus.textContent = "";
+
+    /*
+      Aqui entra o serviço de envio do formulário.
+
+      Podemos usar, por exemplo:
+      - EmailJS
+      - Formspree
+      - Web3Forms
+      - backend próprio
+    */
+
+    setTimeout(() => {
+
+      submitButton.classList.remove("loading");
+      submitButton.textContent = "ENVIAR MENSAGEM";
+
+      formStatus.textContent =
+        "Mensagem preparada com sucesso.";
+
+      formStatus.className = "form-status success";
+
+      contactForm.reset();
+
+    }, 800);
+
+  });
+
+}

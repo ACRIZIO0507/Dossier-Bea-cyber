@@ -198,6 +198,13 @@ h1 em {
   letter-spacing: 0.08em;
   color: var(--ink);
 }
+.field label {
+  font-size: 11px;
+  letter-spacing: 1px;
+  opacity: .6;
+  display: block;
+  margin-bottom: 6px;
+}
 
 #contactForm input,
 #contactForm textarea {

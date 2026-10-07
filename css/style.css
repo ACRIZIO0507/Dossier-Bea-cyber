@@ -96,7 +96,7 @@ nav .wrap {
 }
 
 .logo {
-    font: 500 .95rem "IBM Plex Mono", monospace;
+    font: 500 .95rem 'JetBrains Mono', monospace;
     text-decoration: none;
     color: var(--ink);
     white-space: nowrap
@@ -151,7 +151,7 @@ nav .wrap {
     color: var(--acc);
     border-radius: 99px;
     padding: 3px 14px;
-    font: 500 .8rem "IBM Plex Mono", monospace;
+    font: 500 .8rem "JetBrains Mono", monospace;
     margin-bottom: 20px
 }
 

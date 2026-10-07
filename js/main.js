@@ -91,3 +91,12 @@ if (contactForm) {
   });
 
 }
+document.querySelectorAll('[data-i18n-aria]').forEach(el => {
+    const key = el.getAttribute('data-i18n-aria');
+    const value = i18n[lang] && i18n[lang][key];
+    if (value !== undefined) {
+      el.setAttribute('aria-label', value);
+      el.setAttribute('title', value);
+    }
+  });
+

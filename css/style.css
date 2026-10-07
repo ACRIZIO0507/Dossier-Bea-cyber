@@ -173,6 +173,145 @@ h1 em {
     margin: 20px 0 28px;
     color: var(--mute)
 }
+/* =========================================================
+   FORMULÁRIO DE CONTATO
+   ========================================================= */
+
+#contactForm {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  width: 100%;
+  max-width: 650px;
+}
+
+#contactForm .field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+#contactForm label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--ink);
+}
+
+#contactForm input,
+#contactForm textarea {
+  width: 100%;
+  box-sizing: border-box;
+
+  padding: 14px 16px;
+
+  border: 1px solid var(--line);
+  border-radius: 10px;
+
+  background: transparent;
+  color: var(--ink);
+
+  font-family: inherit;
+  font-size: 0.95rem;
+
+  outline: none;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+#contactForm textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+#contactForm input::placeholder,
+#contactForm textarea::placeholder {
+  color: var(--ink);
+  opacity: 0.45;
+}
+
+/* Foco */
+
+#contactForm input:focus,
+#contactForm textarea:focus {
+  border-color: var(--puple);
+
+  box-shadow:
+    0 0 0 3px rgba(155, 92, 255, 0.12);
+
+  background: rgba(155, 92, 255, 0.03);
+}
+
+/* Botão */
+
+.contact-submit {
+  width: fit-content;
+  cursor: pointer;
+  border: none;
+  margin-top: 4px;
+}
+
+/* Estado de envio */
+
+.contact-submit.loading {
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+/* Mensagem */
+
+.form-status {
+  min-height: 20px;
+  margin: 0;
+
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.form-status.success {
+  color: var(--puple);
+}
+
+.form-status.error {
+  color: #c0392b;
+}
+
+/* Tema escuro */
+
+[data-theme="dark"] #contactForm input,
+[data-theme="dark"] #contactForm textarea {
+  background: rgba(255, 255, 255, 0.03);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+[data-theme="dark"] #contactForm input:focus,
+[data-theme="dark"] #contactForm textarea:focus {
+  border-color: var(--puple);
+  background: rgba(155, 92, 255, 0.06);
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+  #contactForm {
+    gap: 18px;
+  }
+
+  #contactForm input,
+  #contactForm textarea {
+    font-size: 16px;
+  }
+
+  .contact-submit {
+    width: 100%;
+  }
+
+}
 
 .btn {
     display: inline-block;

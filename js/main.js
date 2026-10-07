@@ -85,7 +85,7 @@ if (contactForm) {
       formStatus.className = "form-status success";
 
       contactForm.reset();
-
+const destinatario = "beatrizpereira0506@gmail.com";
     }, 800);
 
   });

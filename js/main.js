@@ -9,6 +9,42 @@ chips.forEach(function (b) {
     document.getElementById("vazio").hidden = n > 0;
   })
 });
+
+const linhas = [
+  "lohane@lab:~$ whoami",
+  "estagiária de tecnologia · ADS",
+  "lohane@lab:~$ cat foco.txt",
+  "redes, hardening, OSINT e infraestrutura",
+  "lohane@lab:~$ ls ferramentas/",
+  "wireshark nmap tcpdump cerberus.py",
+];
+ // TERMINAL WHAOMI
+
+const els = document.querySelectorAll(".term-linha");
+const espera = ms => new Promise(r => setTimeout(r, ms));
+
+async function digitar() {
+  for (let i = 0; i < linhas.length; i++) {
+    const el = els[i];
+    el.classList.add("cursor");
+    const ehComando = linhas[i].includes("$");
+    for (const letra of linhas[i]) {
+      el.textContent += letra;
+      await espera(ehComando ? 55 : 20); // comando mais lento, resposta mais rápida
+    }
+    el.classList.remove("cursor");
+    await espera(350);
+  }
+  els[els.length - 1].classList.add("cursor"); // cursor fica piscando no final
+}
+
+// começa só quando a seção aparece na tela (uma vez)
+const secao = document.querySelector(".seguranca");
+const obs = new IntersectionObserver(([e]) => {
+  if (e.isIntersecting) { digitar(); obs.disconnect(); }
+}, { threshold: 0.4 });
+obs.observe(secao);
+
 var btn = document.getElementById("th");
 var icon = btn.querySelector(".theme-icon") || btn;
 

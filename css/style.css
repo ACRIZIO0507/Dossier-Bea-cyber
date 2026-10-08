@@ -675,39 +675,35 @@ footer {
     }
 }
 
+/* TERMINAL - WHOAMI */
+
 .term {
-    background: #1E1633;
+    background: #1E1633;          /* ou rgba(0,0,0,.55) pro fundo animado aparecer */
     border: 1px solid #3C2F5C;
     border-radius: 12px;
     padding: 20px 22px;
     margin: 0 0 30px;
     font: 400 .95rem/1.8 "IBM Plex Mono", monospace;
     color: #D9C8FA;
-    overflow-x: auto
+    overflow-x: auto;
+    position: relative;
+    z-index: 1;
 }
+.term .d { display: flex; gap: 7px; margin-bottom: 12px }
+.term .d i { width: 11px; height: 11px; border-radius: 50%; background: #C3A6F5; opacity: .7 }
+.term .p { color: #C3A6F5 }
+.term .o { color: #A998CC; margin-bottom: 4px }
 
-.term .d {
-    display: flex;
-    gap: 7px;
-    margin-bottom: 12px
+/* efeito de escrita */
+.term-linha { min-height: 1.4em; white-space: pre-wrap; }
+.cursor::after {
+  content: "▮";
+  margin-left: 2px;
+  animation: piscar 1s steps(1) infinite;
 }
+@keyframes piscar { 50% { opacity: 0; } }
 
-.term .d i {
-    width: 11px;
-    height: 11px;
-    border-radius: 50%;
-    background: #C3A6F5;
-    opacity: .7
-}
 
-.term .p {
-    color: #C3A6F5
-}
-
-.term .o {
-    color: #A998CC;
-    margin-bottom: 4px
-}
 
 .glitch {
     position: relative;
